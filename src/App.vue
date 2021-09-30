@@ -1,8 +1,10 @@
 <template>
   <router-view />
   <div id="nav">
-    <router-link to="/settings"><button>تنظیمات</button> </router-link>
-    <router-link to="/"><button>صفحه نخست</button></router-link>
+     <router-link to="/"><button>صفحه نخست</button></router-link>
+    <br>
+    <br>
+   <router-link to="/settings"><button>تنظیمات</button> </router-link>
   </div>
 </template>
 

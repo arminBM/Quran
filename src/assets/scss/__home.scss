@@ -1,7 +1,6 @@
 @import "./__mixin.scss";
 
 $searchFont: 18px;
-$boxShadow:rgba(0, 0, 0, 0.705) 5px 10px 15px;
 .homeLogo {
   filter: drop-shadow(rgba(0, 0, 0, 0.705) 10px 15px 25px);
   width: 500px;
@@ -46,7 +45,7 @@ $boxShadow:rgba(0, 0, 0, 0.705) 5px 10px 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around ;
-  row-gap: 10px;
+  row-gap: 25px;
   margin-bottom: 40px;
   .soore {
     background-color: $darkBlue;

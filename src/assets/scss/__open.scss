@@ -1,8 +1,51 @@
 @import "./__mixin.scss";
 
+$sooreh_title : 42px;
+
 .sooreh_page{
     height: 100%;
-    .sooreh_p{
-        height: 100%;
+    margin-top: 5%;
+    font-family: me-quran;
+    text-align: center ;
+    .sooreh_title{
+        font-size: $sooreh_title;
+        padding: 0;
+        margin: 0;
     }
+    .sooreh_p{
+        line-height: 47px;
+        text-align: justify;
+        padding: 20px;
+        font-size: 24px;
+        
+    }
+    .sooreh_p_fa{
+        @extend .sooreh_p;
+        font-family: IRANsans;
+    }
+    .up_btn{
+        font-size: 50px;
+        background: none;
+        border:none;
+        position:fixed;
+        left: 0%;
+        bottom:5%
+    }
+}
+.diagonal_line{
+    width: 20px;
+    height: 70px;
+    background-color: rgb(3, 78, 3);
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    transform: rotate(45deg);
+    border: 1px solid ;
+}
+.diagonal_line2{
+    @extend .diagonal_line;
+    height:120px ;
+    left: 65px;
+    top: 7px;
+    
 }

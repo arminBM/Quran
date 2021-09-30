@@ -1,12 +1,16 @@
 <template>
-<div class="sooreh_page">
-<p class="sooreh_p">
-  {{sooreh.id}}
-  {{sooreh.ar_name}}
-  {{sooreh.arabic_text}}
-  </p>
-</div>
-
+<span class="diagonal_line"></span>
+<span class="diagonal_line2"></span>
+  <div class="sooreh_page">
+    <span class="sooreh_title" id="sooreh_title">(({{ sooreh.ar_name }}))</span>
+    <p class="sooreh_p">
+      {{ sooreh.arabic_text }}
+    </p>
+    <p class="sooreh_p_fa">
+      {{ sooreh.fa_makarem_text }}
+    </p>
+    <a href="#sooreh_title"><button class="up_btn">&#128314;</button></a>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref, nextTick } from "vue";
@@ -76,7 +80,7 @@ export default defineComponent({
       }
     });
     return {
-      sooreh
+      sooreh,
     };
   },
 });

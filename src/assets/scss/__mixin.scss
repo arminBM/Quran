@@ -2,6 +2,7 @@ $lightBlue :  #51c7cc;
 $darkBlue : #2f66ac;
 $white : #fff;
 $black : #000;
+$boxShadow:rgba(0, 0, 0, 0.705) 5px 10px 15px;
 @mixin breakPointX($size) {
     @media only screen and (max-width: $size) {
         @content;

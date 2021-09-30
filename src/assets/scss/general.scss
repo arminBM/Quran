@@ -1,4 +1,5 @@
 @import "./__app.scss";
+@import "./_mixin";
 @font-face {
     font-family: me-quran;
     src: url("../fonts/me-quran/me-quran.ttf");
@@ -35,4 +36,5 @@ html,
 body {
     margin: 0;
     direction: rtl;
+    background-color:$lightBlue;    
 }

@@ -3,20 +3,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    alias:['/home','/index','/hom'],
     component: () => import('../views/Home.vue')
   },
   {
-    path: '/list',
-    name: 'List',
-    alias:['/ist','/lst','/lis'],
-    component: () => import('../views/List.vue')
+    path: '/settings',
+    name: 'Settings',
+    component: () => import('../views/Settings.vue')
   },
   {
-    path: '/soureh/:id',
-    name: 'Show',
-    alias:['/sourh/:id','/sureh/:id','/soreh/:id'],
-    component: () => import('../views/Show.vue'),
+    path: '/sooreh/:id',
+    name: 'Open',
+    component: () => import('../views/Open.vue'),
     props: true
   },
   {

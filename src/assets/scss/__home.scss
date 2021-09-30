@@ -3,7 +3,7 @@
 $searchFont: 18px;
 .homeLogo {
   filter: drop-shadow(rgba(0, 0, 0, 0.705) 10px 15px 25px);
-  width: 500px;
+  width: 40%;
   display: grid;
   justify-self: center;
   animation: bounce 5s infinite;
@@ -15,10 +15,11 @@ $searchFont: 18px;
   justify-self: center;
   box-shadow:$boxShadow ;
   border-radius: 10px;
+  width: 50%;
   .input_home {
     display: grid;
     justify-self: center;
-    width: 400px;
+    width: 80%;
     height: 30px;
     font-family: IRANSans;
     border-radius: 0 10px 10px 0;
@@ -34,7 +35,7 @@ $searchFont: 18px;
   .searchBtn {
     border-radius: 10px 0 0 10px;
     border: none;
-    width: 100px;
+    width: 20%;
     font-family: IRANSans;
     font-size: $searchFont;
     background-color: $darkBlue;

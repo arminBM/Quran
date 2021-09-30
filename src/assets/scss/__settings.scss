@@ -1,2 +1,22 @@
 @import "./__mixin.scss";
-
+.settings{
+    display: grid;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: IRANsans;
+    .settings_p{
+        font-size: 40px;
+        font-weight:900;
+    }
+    .settings_input{
+        border: 2px dashed darkblue ;
+        padding: 20px;
+        label{
+            font-size: 30px;
+        }
+        input{
+            margin-right: 200px;
+        }
+    }
+}

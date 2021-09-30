@@ -6,14 +6,20 @@
     <p class="sooreh_p">
       {{ sooreh.arabic_text }}
     </p>
-    <p class="sooreh_p_fa">
+    <p v-if="tar == 1" class="sooreh_p_fa" :style="{ 'font-family': font }">
+      {{ sooreh.fa_ansarian_text }}
+    </p>
+    <p v-if="tar == 2" class="sooreh_p_fa" :style="{ 'font-family': font }">
       {{ sooreh.fa_makarem_text }}
+    </p>
+    <p v-if="tar == 3" class="sooreh_p_fa" :style="{ 'font-family': font }">
+      {{ sooreh.fa_maleki_text }}
     </p>
     <a href="#sooreh_title"><button class="up_btn">&#128314;</button></a>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref, nextTick } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { useStore } from "../store/sooreh";
 
 export default defineComponent({
@@ -79,8 +85,14 @@ export default defineComponent({
         }
       }
     });
+    let tarJson = localStorage.getItem("tar") || '"1"';
+    let tar = ref(JSON.parse(tarJson));
+    let fontJson = localStorage.getItem("font") || '"IRANsans"';
+    let font = ref(JSON.parse(fontJson));
     return {
       sooreh,
+      tar,
+      font
     };
   },
 });

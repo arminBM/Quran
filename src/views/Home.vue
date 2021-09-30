@@ -1,14 +1,24 @@
 <template>
   <img class="homeLogo" src="../assets/img/logo1.png" alt="" />
   <div class="search">
-    <input type="text" class="input_home" placeholder="جستجو اسم سوره" />
-    <button type="submit" class="searchBtn">جستجو</button>
+    <input
+      type="text"
+      class="input_home"
+      placeholder="جستجو اسم سوره"
+      v-model="searchInput"
+    />
+    <button type="submit" class="searchBtn" @click="search">جستجو</button>
   </div>
   <br />
   <br />
   <br />
   <div class="sooreBox">
-    <div class="soore" v-for="item in quran_name" :key="item.id" @click="open(item.id)">
+    <div
+      class="soore"
+      v-for="item in quran_name"
+      :key="item.id"
+      @click="open(item.id)"
+    >
       <p>
         <span>اسم:</span>&nbsp
         <span>{{ item.ar_name }}</span>
@@ -34,7 +44,7 @@ export default defineComponent({
   name: "Home",
   setup() {
     const store = useStore();
-    const quran_name = store.all_quran;
+    const quran_name = ref(store.all_quran);
     const router = useRouter();
     function open(id: number) {
       router.push({
@@ -42,7 +52,32 @@ export default defineComponent({
         params: { id: id },
       });
     }
-    return { quran_name, open };
+    let input_x = ref(0);
+    let searchInput = ref("");
+    function search() {
+      if (searchInput.value == "") {
+        alert("لطفا فیلد را پر کنید");
+      } else {
+        for (let i = 0; i < 114; i++) {
+          if (
+            searchInput.value == quran_name.value[i].ar_name ||
+            searchInput.value == quran_name.value[i].pa_name
+          ) {
+            input_x.value = 1;
+            router.push({
+              name: "Open",
+              params: {
+                id: quran_name.value[i].id,
+              },
+            });
+          }
+        }
+        if (input_x.value == 0) {
+          alert("پیدا نشد");
+        }
+      }
+    }
+    return { quran_name, open, search, input_x, searchInput };
   },
 });
 </script>

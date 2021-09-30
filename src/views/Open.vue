@@ -1,18 +1,18 @@
 <template>
-<span class="diagonal_line"></span>
-<span class="diagonal_line2"></span>
+  <span class="diagonal_line"></span>
+  <span class="diagonal_line2"></span>
   <div class="sooreh_page">
     <span class="sooreh_title" id="sooreh_title">(({{ sooreh.ar_name }}))</span>
     <p class="sooreh_p">
       {{ sooreh.arabic_text }}
     </p>
-    <p v-if="tar == 1" class="sooreh_p_fa" :style="{ 'font-family': font }">
+    <p v-if="tar == 1" class="sooreh_p_fa" :style="{ 'fontFamily': font2 }">
       {{ sooreh.fa_ansarian_text }}
     </p>
-    <p v-if="tar == 2" class="sooreh_p_fa" :style="{ 'font-family': font }">
+    <p v-if="tar == 2" class="sooreh_p_fa" :style="{ 'fontFamily': font2 }">
       {{ sooreh.fa_makarem_text }}
     </p>
-    <p v-if="tar == 3" class="sooreh_p_fa" :style="{ 'font-family': font }">
+    <p v-if="tar == 3" class="sooreh_p_fa" :style="{ 'fontFamily': font2 }">
       {{ sooreh.fa_maleki_text }}
     </p>
     <a href="#sooreh_title"><button class="up_btn">&#128314;</button></a>
@@ -88,11 +88,11 @@ export default defineComponent({
     let tarJson = localStorage.getItem("tar") || '"1"';
     let tar = ref(JSON.parse(tarJson));
     let fontJson = localStorage.getItem("font") || '"IRANsans"';
-    let font = ref(JSON.parse(fontJson));
+    let font2:string = ref(JSON.parse(fontJson));
     return {
       sooreh,
       tar,
-      font
+      font2,
     };
   },
 });
